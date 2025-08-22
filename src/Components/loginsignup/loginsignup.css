@@ -1,0 +1,113 @@
+.container {
+  width: 350px;
+  margin: 50px auto;
+  padding: 20px;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+  font-family: Arial, sans-serif;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.text {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.underline {
+  width: 50px;
+  height: 3px;
+  background: #007bff;
+  margin: 5px auto;
+  border-radius: 5px;
+}
+
+.inputs {
+  margin-bottom: 15px;
+}
+
+.input {
+  display: flex;
+  align-items: center;
+  background: #f2f2f2;
+  border-radius: 8px;
+  padding: 8px 12px;
+}
+
+.input img {
+  width: 20px;   /* 👈 control icon size */
+  height: 20px;
+  margin-right: 10px;
+}
+
+.input input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 16px;
+  color: #333;
+}
+
+.forgot-password {
+  font-size: 14px;
+  color: #555;
+  margin: 10px 0;
+  text-align: center;
+}
+
+.forgot-password span {
+  color: #007bff;   /* Blue highlight */
+  cursor: pointer;
+  font-weight: 500;
+  margin-left: 5px;
+  transition: color 0.3s;
+}
+
+.forgot-password span:hover {
+  color: #0056b3;   /* Darker blue on hover */
+  text-decoration: underline;
+}
+
+.submit-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  gap: 15px;
+}
+
+.submit {
+  flex: 1;
+  text-align: center;
+  padding: 10px 0;
+  background: #007bff;
+  color: #fff;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+/* Hover only for active (blue) buttons */
+.submit:not(.gray):hover {
+  background: #0056b3;
+  transform: translateY(-2px);
+}
+
+/* Gray state button */
+.submit.gray {
+  background: #989797;
+  color: #fff;
+  cursor: default;
+}
+
+.submit.gray:hover {
+  background: #8a8a8a;
+  transform: none;
+}

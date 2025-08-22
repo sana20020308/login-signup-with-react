@@ -1,14 +1,11 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
-
-import userIcon from './Components/Assets/user.png'
-import lockIcon from './Components/Assets/padlock.png'
-import mailIcon from './Components/Assets/email.png'
+import Loginsignup from './Components/loginsignup/loginsignup';
 
 function App() {
   return (
     <div>
-      <loginsignup />
+      <Loginsignup />
     </div>
   );
 }
