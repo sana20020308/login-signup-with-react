@@ -1,48 +1,72 @@
 .container {
-  width: 350px;
-  margin: 50px auto;
-  padding: 20px;
-  border-radius: 10px;
-  background: #fff;
-  box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
-  font-family: Arial, sans-serif;
+  width: 380px;
+  margin: 60px auto;
+  padding: 30px;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.12);
+  font-family: 'Segoe UI', 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .header {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 28px;
 }
 
 .text {
-  font-size: 24px;
-  font-weight: bold;
-  color: #333;
+  font-size: 28px;
+  font-weight: 700;
+  color: #1a1a1a;
+  letter-spacing: -0.5px;
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .underline {
-  width: 50px;
-  height: 3px;
-  background: #007bff;
-  margin: 5px auto;
-  border-radius: 5px;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, #007bff, #00c6ff);
+  margin: 8px auto;
+  border-radius: 8px;
 }
 
 .inputs {
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 .input {
   display: flex;
   align-items: center;
-  background: #f2f2f2;
-  border-radius: 8px;
-  padding: 8px 12px;
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 12px 16px;
+  margin-bottom: 15px;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.input:focus-within {
+  border-color: #007bff;
+  background: #ffffff;
+  box-shadow: 0px 4px 15px rgba(0, 123, 255, 0.15);
+  transform: translateY(-1px);
 }
 
 .input img {
-  width: 20px;   /* 👈 control icon size */
-  height: 20px;
-  margin-right: 10px;
+  width: 22px;
+  height: 22px;
+  margin-right: 12px;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.input:focus-within img {
+  opacity: 1;
 }
 
 .input input {
@@ -51,63 +75,107 @@
   outline: none;
   background: transparent;
   font-size: 16px;
-  color: #333;
+  color: #2c3e50;
+  font-weight: 500;
+}
+
+.input input::placeholder {
+  color: #95a5a6;
+  font-weight: 400;
 }
 
 .forgot-password {
   font-size: 14px;
-  color: #555;
-  margin: 10px 0;
+  color: #7f8c8d;
+  margin: 15px 0;
   text-align: center;
+  font-weight: 500;
 }
 
 .forgot-password span {
-  color: #007bff;   /* Blue highlight */
+  color: #007bff;
   cursor: pointer;
-  font-weight: 500;
-  margin-left: 5px;
-  transition: color 0.3s;
+  font-weight: 600;
+  margin-left: 6px;
+  transition: all 0.3s ease;
+  position: relative;
 }
 
 .forgot-password span:hover {
-  color: #0056b3;   /* Darker blue on hover */
-  text-decoration: underline;
+  color: #0056b3;
+}
+
+.forgot-password span::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #007bff, #00c6ff);
+  transition: width 0.3s ease;
+}
+
+.forgot-password span:hover::after {
+  width: 100%;
 }
 
 .submit-container {
   display: flex;
   justify-content: space-between;
-  margin-top: 20px;
+  margin-top: 25px;
   gap: 15px;
 }
 
 .submit {
   flex: 1;
   text-align: center;
-  padding: 10px 0;
-  background: #007bff;
+  padding: 14px 0;
+  background: linear-gradient(135deg, #007bff, #0056b3);
   color: #fff;
-  border-radius: 6px;
+  border-radius: 12px;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 600;
   cursor: pointer;
-  transition: background 0.3s, transform 0.2s;
+  transition: all 0.3s ease;
+  border: none;
+  box-shadow: 0px 4px 15px rgba(0, 123, 255, 0.3);
+  position: relative;
+  overflow: hidden;
 }
 
-/* Hover only for active (blue) buttons */
+.submit::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.submit:hover::before {
+  left: 100%;
+}
+
 .submit:not(.gray):hover {
-  background: #0056b3;
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+  box-shadow: 0px 8px 25px rgba(0, 123, 255, 0.4);
 }
 
-/* Gray state button */
+.submit:active {
+  transform: translateY(-1px);
+  box-shadow: 0px 2px 10px rgba(0, 123, 255, 0.3);
+}
+
 .submit.gray {
-  background: #989797;
-  color: #fff;
-  cursor: default;
+  background: linear-gradient(135deg, #bdc3c7, #95a5a6);
+  color: #ffffff;
+  box-shadow: 0px 2px 8px rgba(189, 195, 199, 0.3);
 }
 
 .submit.gray:hover {
-  background: #8a8a8a;
   transform: none;
+  box-shadow: 0px 2px 8px rgba(189, 195, 199, 0.3);
 }
